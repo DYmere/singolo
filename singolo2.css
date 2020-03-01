@@ -21,7 +21,6 @@
 body {
   width: 1020px;
   margin: auto;
-  
 }
 
 .portfolio {
@@ -98,8 +97,10 @@ body {
   color: #666d89;
 }
 
-.designers h1 > p {
+.designers > p {
   padding-right: 40px;
+  padding-left: 40px;
+  margin-top: -8px;
   font-size: 18px;
   line-height: 30px;
   font-family: Lato-light;
@@ -114,10 +115,11 @@ body {
   grid-template-rows: 300px;
   grid-column-gap: 20px;
   padding-top: 27px;
+  padding-left: 40px;
 }
 
 .people h3 {
-  margin-top: 7px;
+  margin-top: 10px;
   font-size: 18px;
   white-space: nowrap;
   font-family: Lato-Black;
@@ -128,9 +130,9 @@ body {
 }
 
 .people p {
-  margin-top: -8px;
+  margin-top: -9px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 21px;
   text-align: justify;
   font-family: Lato-Regular;  
   color: #767e9e; 
@@ -143,5 +145,5 @@ body {
 }
 
 .designers .social-medias img {
-  padding-right: 1px;
+  padding-right: 3px;
 }
