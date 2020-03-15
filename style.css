@@ -70,12 +70,8 @@ header a {
   font-family: Lato-Bold;
 }
 
-header li:first-child a {
-  color: #f06c64;
-}
-
 header a:hover {
-  color: aqua;
+  color: #f06c64;
 }
 
 .slider {
@@ -305,11 +301,11 @@ header a:hover {
 
 .designers .social-medias {
   margin-top: 23px;
-  cursor: pointer;
 }
 
 .designers .social-medias img {
   padding-right: 3px;
+  cursor: pointer;
 }
 
 .contacts {
@@ -467,9 +463,9 @@ footer p {
 footer .social-medias {
   margin-left: auto;
   padding-right: 40px;
-  cursor: pointer;
 }
 
 footer a img {
   padding-right: 2px;
+  cursor: pointer;
 }
