@@ -70,8 +70,13 @@ header a {
   font-family: Lato-Bold;
 }
 
-header a:hover {
+header a.active {
   color: #f06c64;
+}
+
+header a:not(.active):hover {
+  color: #f0d8d9;
+  cursor: pointer;
 }
 
 .slider {
@@ -383,6 +388,52 @@ input:nth-child(13) {
   cursor: pointer;
 }
 
+#message-block {
+  position: absolute;
+  top: 350%;
+  left: 20%;
+  width: 650px;
+  height: 300px;
+  border: 2px solid #000000;
+  background-color: #f06c64;
+  border-radius: 10px;
+}
+
+#message-block.hidden {
+  display: none;
+}
+
+#message {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 500px;
+  height: 200px;
+  color: #ffffff;
+  overflow: auto;
+}
+
+#message p:first-child {
+  font-style: bolder;
+  color: #000000;
+  text-align: center;
+}
+
+#close-button {
+  position: absolute;
+  top: 85%;
+  left: 45%;
+  width: 100px;
+  height: 30px;
+  color: #f06c64;
+  background-color: #f0d8d9;
+  font-weight: bold;
+  text-indent: 0;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 *::placeholder {
   color: #f48c8f;
   font-size: 12px;
@@ -428,7 +479,6 @@ input:nth-child(13) {
 
 .information li:nth-child(2) {
   margin-left: 2px;
-  padding-top: 
 }
 
 .information ul a {
