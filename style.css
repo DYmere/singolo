@@ -24,6 +24,7 @@ body {
 }
 
 header {
+  position:fixed;
   display: grid;
   grid-template-columns: 230px 790px;
   grid-template-rows: 89px;
@@ -373,7 +374,7 @@ form textarea {
   padding-top: 10px;
   font-size: 12px;
   height: 190px;
-  width: 616px;
+  width: 619px;
   font-family: Lato-Regular;
   resize: none;
 }
@@ -390,13 +391,18 @@ input:nth-child(13) {
 
 #message-block {
   position: absolute;
-  top: 350%;
-  left: 20%;
-  width: 650px;
+  top: 3000px;
+  left: 33%;
+  width: 620px;
   height: 300px;
-  border: 2px solid #000000;
+  border: 3px solid #000000;
   background-color: #f06c64;
   border-radius: 10px;
+}
+
+#message-block > p {
+  color: #000000;
+  text-align: center;
 }
 
 #message-block.hidden {
@@ -405,24 +411,18 @@ input:nth-child(13) {
 
 #message {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 10%;
   width: 500px;
-  height: 200px;
+  height: 180px;
   color: #ffffff;
   overflow: auto;
-}
-
-#message p:first-child {
-  font-style: bolder;
-  color: #000000;
-  text-align: center;
 }
 
 #close-button {
   position: absolute;
   top: 85%;
-  left: 45%;
+  left: 42%;
   width: 100px;
   height: 30px;
   color: #f06c64;

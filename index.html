@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
+    <header id="home">
       <h1>Singolo<span>*</span></h1>
       <ul>
         <li><a class="active" href="#home">Home</a></li>
@@ -30,7 +30,7 @@
 	      <img src="assets/images/chev.svg" alt="next">
 	    </div>
 	  </div>
-	  <section class="services">
+	  <section class="services" id="services">
       <div class="about">
 	      <h3>Our Services</h3>
         <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio  sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -104,7 +104,7 @@
       </li>		
 	  </ul>
 	</section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <h1>Portfolio</h1>
 	  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
       <nav>
@@ -128,7 +128,7 @@
 	    <img src="assets/images/portfolio-12.png" alt="portfolio 12">
 	  </div>
     </section>
-    <section class="designers">
+    <section class="designers" id="about">
       <h1>About Us</h1>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>	  
 	    <div class="people">
@@ -167,25 +167,17 @@
       </div>		
     </div>	
 	</section>
-  <section class="contacts">
+  <section class="contacts" id="contact">
     <h1>Get a Quote</h1>
 	  <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
 	  <div class="feedback">
 	    <form>
-        <input type="text" placeholder="Name (Requred)" name="name" required><br><br>
-        <input type="email" placeholder="Email (Requred)" name="email" required><br><br>
+        <input id="input-name" type="text" placeholder="Name (Requred)" name="name" required><br><br>
+        <input id="input-email" type="email" placeholder="Email (Requred)" name="email" required><br><br>
 		    <input id="input-subject" type="text" placeholder="Subject" name="subject"><br><br>
 		    <textarea id="input-description" placeholder="Describe your project in detail..." name="description" rows="13"></textarea><br><br>
 		    <input id="submit" type="submit"  value="Send">
 		  </form>
-      <div id="message-block" class="hidden">
-        <div id="message">
-          <p>The letter was sent</p>
-          <p id="subject"></p>
-          <p id="description"></p>
-        </div>
-        <button id="close-button">OK</button>
-      </div>
 		    <div class='information'>
 		      <h3>Contact Information</h3>
 		      <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
@@ -204,6 +196,14 @@
 			      </li>
           </ul>
 		    </div>
+			</div>
+			<div id="message-block" class="hidden">
+				<p>The letter was sent</p>
+        <div id="message">
+          <p id="subject"></p>
+          <p id="description"></p>
+        </div>
+        <button id="close-button">OK</button>
       </div>
     </section>
 	  <footer>
