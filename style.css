@@ -18,9 +18,10 @@
   src: url(assets/fonts/Lato-Regular.ttf);
 }
 
-body {
+html, body {
   width: 1020px;
   margin: auto;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -240,10 +241,14 @@ header a:not(.active):hover {
   padding-left: 40px;
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
-  grid-template-rows: 187px 187px 187px;
+  grid-template-rows: 187px 187px 207px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   overflow: hidden;
+}
+
+.gallery img.active-img {
+  border: 5px solid #f06c64;
 }
 
 .designers {

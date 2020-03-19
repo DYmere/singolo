@@ -9,8 +9,14 @@ menu.addEventListener("click", (event) => {
   event.target.classList.add("active");
 });
 
+gallery.addEventListener("click", (event) => {
+  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
+  event.target.classList.add("active-img");
+});
+
 portfolio_menu.addEventListener("click", (event) => {
   let arr_gallery = [];
+  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
   portfolio_menu.querySelectorAll("a").forEach(element => element.classList.remove("active-nav"));
   event.target.classList.add("active-nav");
   gallery.querySelectorAll("img").forEach(element => arr_gallery.push(element));
@@ -23,23 +29,23 @@ portfolio_menu.addEventListener("click", (event) => {
 });
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset < 300) {
+  if (window.pageYOffset < 695) {
     menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
     menu.querySelector("li:nth-child(1) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 300 && window.pageYOffset < 700) {
+  else if (window.pageYOffset >= 695 && window.pageYOffset < 1195) {
     menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
     menu.querySelector("li:nth-child(2) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 700 && window.pageYOffset < 1500) {
+  else if (window.pageYOffset >= 1195 && window.pageYOffset < 2064) {
     menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
     menu.querySelector("li:nth-child(3) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 1500 && window.pageYOffset < 2000) {
+  else if (window.pageYOffset >= 2064 && window.pageYOffset < 2798) {
     menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
     menu.querySelector("li:nth-child(4) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 2000) {
+  else if (window.pageYOffset >= 2798) {
     menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
     menu.querySelector("li:nth-child(5) a").classList.add("active");
   };
