@@ -231,7 +231,7 @@ header a:not(.active):hover {
   letter-spacing: -0.3px;
 }
 
-.portfolio nav a:first-child {
+.portfolio nav a.active-nav {
   color: #dedede;
 }
 

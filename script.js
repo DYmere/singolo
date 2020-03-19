@@ -1,10 +1,25 @@
 const menu = document.querySelector("header ul");
+const portfolio_menu = document.querySelector(".portfolio nav");
 const button = document.getElementById("submit");
 const close_button = document.getElementById("close-button");
+const gallery = document.querySelector(".gallery");
 
 menu.addEventListener("click", (event) => {
   menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
   event.target.classList.add("active");
+});
+
+portfolio_menu.addEventListener("click", (event) => {
+  let arr_gallery = [];
+  portfolio_menu.querySelectorAll("a").forEach(element => element.classList.remove("active-nav"));
+  event.target.classList.add("active-nav");
+  gallery.querySelectorAll("img").forEach(element => arr_gallery.push(element));
+  let mixed_arr_gallery = arr_gallery.sort(() => {
+    return Math.random() - 0.5;
+  });
+  document.querySelector(".gallery").innerText = "";
+  mixed_arr_gallery.forEach(element => document.querySelector(".gallery").appendChild(element));
+  event.preventDefault();
 });
 
 window.addEventListener('scroll', () => {
