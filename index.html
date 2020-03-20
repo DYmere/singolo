@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header id="home">
+    <header>
       <h1>Singolo<span>*</span></h1>
       <ul>
         <li><a class="active" href="#home">Home</a></li>
@@ -15,21 +15,27 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </header>
-	  <div class="slider">
+		</header>
+	  <div class="slider" id="home">
 	    <div class="previous">
-	      <img src="assets/images/chev.svg" alt="previous">
+	      <img src="assets/images/arrow-left.svg" alt="previous">
       </div>
 	    <div class="iphone-vertical">
-	      <img src="assets/images/iphone-vertical.png" alt="iPhone-vertical">
+	      <img src="assets/images/iphone-vertical.png" alt="iPhone-vertical" usemap="#ibutton-ver">
       </div>
 	    <div class="iphone-horizontal">
-	      <img src="assets/images/iphone-horizontal.png" alt="iPhone-horizontal">
+	      <img src="assets/images/iphone-horizontal.png" alt="iPhone-horizontal" usemap="#ibutton-hor">
       </div>
 	    <div class="next">
-	      <img src="assets/images/chev.svg" alt="next">
-	    </div>
-	  </div>
+	      <img src="assets/images/arrow-right.svg" alt="next">
+			</div>
+			<map name="ibutton-hor" id="ibutton-hor">
+			<area href="#" shape="circle" coords="29, 107,21">
+			</map>
+			<map name="ibutton-ver" id="ibutton-ver">
+				<area href="#" shape="circle" coords="107, 429,21">
+			</map>
+		</div>
 	  <section class="services" id="services">
       <div class="about">
 	      <h3>Our Services</h3>

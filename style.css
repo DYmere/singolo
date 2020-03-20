@@ -21,11 +21,12 @@
 html, body {
   width: 1020px;
   margin: auto;
+  scroll-padding-top: 95px;
   scroll-behavior: smooth;
 }
 
 header {
-  position:fixed;
+  position: fixed;
   display: grid;
   grid-template-columns: 230px 790px;
   grid-template-rows: 89px;
@@ -82,15 +83,12 @@ header a:not(.active):hover {
 }
 
 .slider {
+  padding-top: 95px;
   display: grid;
   grid-template-columns: 100px 200px 624px 96px;
   grid-template-rows: 594px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
-}
-
-.slider .previous {
-  margin: auto;
 }
 
 .slider .iphone-vertical {
@@ -103,12 +101,6 @@ header a:not(.active):hover {
   padding-left: 110px;
 }
 
-.slider .next {
-  margin: auto;
-  margin-top: 278px;
-  transform: rotate(180deg);
-} 
-
 .services {
   display: grid;
   grid-template-columns: 1020px;
@@ -119,6 +111,7 @@ header a:not(.active):hover {
 }
 
 .slider .previous, .next {
+  margin: auto;
   cursor: pointer;
 }
 
