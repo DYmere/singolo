@@ -30,9 +30,9 @@ button.addEventListener("click", (event) => {
   
   const input_subject = document.getElementById("input-subject").value.toString();
   const input_description = document.getElementById("input-description").value.toString();
-  const input_name = document.getElementById("input-name").value.toString();
-  const input_email = document.getElementById("input-email").value.toString();
-  if (input_name && input_email) {
+  const input_name = document.getElementById("input-name");
+  const input_email = document.getElementById("input-email");
+  if (input_name.validity.valid && input_email.validity.valid) {
     if (input_subject) {
       document.getElementById("subject").innerText = "Subject: "+input_subject;
     }
