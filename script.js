@@ -6,54 +6,11 @@ const gallery = document.querySelector(".gallery");
 const ibutton_ver = document.getElementById("ibutton-ver");
 const ibutton_hor = document.getElementById("ibutton-hor");
 
+// header
 
-gallery.addEventListener("click", (event) => {
-  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
-  event.target.classList.add("active-img");
-});
-
-portfolio_menu.addEventListener("click", (event) => {
-  let arr_gallery = [];
-  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
-  portfolio_menu.querySelectorAll("a").forEach(element => element.classList.remove("active-nav"));
-  event.target.classList.add("active-nav");
-  gallery.querySelectorAll("img").forEach(element => arr_gallery.push(element));
-  let mixed_arr_gallery = arr_gallery.sort(() => {
-    return Math.random() - 0.5;
-  });
-  document.querySelector(".gallery").innerText = "";
-  mixed_arr_gallery.forEach(element => document.querySelector(".gallery").appendChild(element));
-  event.preventDefault();
-});
-
-button.addEventListener("click", (event) => {
-  
-  const input_subject = document.getElementById("input-subject").value.toString();
-  const input_description = document.getElementById("input-description").value.toString();
-  const input_name = document.getElementById("input-name");
-  const input_email = document.getElementById("input-email");
-  if (input_name.validity.valid && input_email.validity.valid) {
-    if (input_subject) {
-      document.getElementById("subject").innerText = "Subject: "+input_subject;
-    }
-    else {
-      document.getElementById("subject").innerText = "without subject";
-    };
-    if (input_description) {
-      document.getElementById("description").innerText = "Description: "+input_description;
-    }
-    else {
-      document.getElementById("description").innerText = "without description";
-    };
-    document.getElementById("message-block").classList.remove("hidden");
-    event.preventDefault();
-  };
-});
-
-close_button.addEventListener("click", () => {
-  document.getElementById("subject").innerText = "";
-  document.getElementById("description").innerText = "";
-  document.getElementById("message-block").classList.add("hidden");
+menu.addEventListener("click", (event) => {
+  menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+  event.target.classList.add("active");
 });
 
 window.addEventListener("scroll", () => {
@@ -79,10 +36,9 @@ window.addEventListener("scroll", () => {
   };
 });
 
-menu.addEventListener("click", (event) => {
-  menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-  event.target.classList.add("active");
-});
+// slider: slide switch
+
+// slider: activating phone screens
 
 ibutton_ver.addEventListener("click", (event) => {
   let iphone = document.querySelector(".iphone-vertical img");
@@ -102,4 +58,64 @@ ibutton_hor.addEventListener("click", (event) => {
   else {
     iphone.setAttribute("src", "assets/images/iphone-horizontal.png");
   };
+});
+
+// portfolio: image interaction
+
+gallery.addEventListener("click", (event) => {
+  if (event.target.getAttribute("class") == "active-img") {
+    gallery.querySelector("img.active-img").classList.remove("active-img");
+    return true;
+  };
+  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
+  event.target.classList.add("active-img");
+});
+
+// portfolio: tab switching
+
+portfolio_menu.addEventListener("click", (event) => {
+  let arr_gallery = [];
+  gallery.querySelectorAll("img").forEach(element => element.classList.remove("active-img"));
+  portfolio_menu.querySelectorAll("a").forEach(element => element.classList.remove("active-nav"));
+  event.target.classList.add("active-nav");
+  gallery.querySelectorAll("img").forEach(element => arr_gallery.push(element));
+  let mixed_arr_gallery = arr_gallery.sort(() => {
+    return Math.random() - 0.5;
+  });
+  document.querySelector(".gallery").innerText = "";
+  mixed_arr_gallery.forEach(element => document.querySelector(".gallery").appendChild(element));
+  event.preventDefault();
+});
+
+// get a quote
+
+button.addEventListener("click", (event) => {
+  let input_subject = document.getElementById("input-subject").value.toString();
+  let input_description = document.getElementById("input-description").value.toString();
+  let input_name = document.getElementById("input-name");
+  let input_email = document.getElementById("input-email");
+  if (input_name.validity.valid && input_email.validity.valid) {
+    if (input_subject) {
+      document.getElementById("subject").innerText = "Subject: "+input_subject;
+    }
+    else {
+      document.getElementById("subject").innerText = "without subject";
+    };
+    if (input_description) {
+      document.getElementById("description").innerText = "Description: "+input_description;
+    }
+    else {
+      document.getElementById("description").innerText = "without description";
+    };
+    document.getElementById("message-block").classList.remove("hidden");
+    event.preventDefault();
+  };
+});
+
+close_button.addEventListener("click", () => {
+  document.getElementById("input-name").value="";
+  document.getElementById("input-email").value = "";
+  document.getElementById("input-subject").value = "";
+  document.getElementById("input-description").value = "";
+  document.getElementById("message-block").classList.add("hidden");
 });
