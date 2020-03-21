@@ -17,20 +17,23 @@
       </ul>
 		</header>
 	  <div class="slider" id="home">
-	    <div class="previous">
+	    <div class="previous" id="arrow-prev">
 	      <img src="assets/images/arrow-left.svg" alt="previous">
       </div>
-	    <div class="iphone-vertical">
+	    <div class="iphone-vertical block block-1">
 	      <img src="assets/images/iphone-vertical.png" alt="iPhone-vertical" usemap="#ibutton-ver">
       </div>
-	    <div class="iphone-horizontal">
+	    <div class="iphone-horizontal block block-1">
 	      <img src="assets/images/iphone-horizontal.png" alt="iPhone-horizontal" usemap="#ibutton-hor">
       </div>
-	    <div class="next">
+	    <div class="next" id="arrow-next">
 	      <img src="assets/images/arrow-right.svg" alt="next">
 			</div>
+			<div class="slide-2 block block-2 hidden-slide">
+				<img src="assets/images/slide-2.png" alt="Slide 2">
+			</div>
 			<map name="ibutton-hor" id="ibutton-hor">
-			<area href="#" shape="circle" coords="29, 107,21">
+			  <area href="#" shape="circle" coords="29, 107,21">
 			</map>
 			<map name="ibutton-ver" id="ibutton-ver">
 				<area href="#" shape="circle" coords="107, 429,21">
@@ -204,12 +207,14 @@
 		    </div>
 			</div>
 			<div id="message-block" class="hidden">
-				<p>The letter was sent</p>
-        <div id="message">
-          <p id="subject"></p>
-          <p id="description"></p>
-        </div>
-        <button id="close-button">OK</button>
+			  <div class="canvas">
+					<p>The letter was sent</p>
+          <div id="message">
+            <p id="subject"></p>
+            <p id="description"></p>
+					</div>
+					<button id="close-button">OK</button>
+				</div>
       </div>
     </section>
 	  <footer>

@@ -85,10 +85,11 @@ header a:not(.active):hover {
 .slider {
   padding-top: 95px;
   display: grid;
-  grid-template-columns: 100px 200px 624px 96px;
+  grid-template-columns: 100px 200px 624px 96px 1020px;
   grid-template-rows: 594px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  overflow: hidden;
 }
 
 .slider .iphone-vertical {
@@ -99,6 +100,14 @@ header a:not(.active):hover {
 .slider .iphone-horizontal {
   margin: auto;
   padding-left: 110px;
+}
+
+.slider .slide-2 {
+  display: grid;
+}
+
+.hidden-slide {
+  display: none;
 }
 
 .services {
@@ -112,7 +121,12 @@ header a:not(.active):hover {
 
 .slider .previous, .next {
   margin: auto;
+  z-index: 1;
   cursor: pointer;
+}
+
+.block {
+  transition: transform 0.6s ease;
 }
 
 .about {
@@ -241,6 +255,8 @@ header a:not(.active):hover {
 }
 
 .gallery img.active-img {
+  margin-top: -5px;
+  margin-left: -5px;
   border: 5px solid #f06c64;
 }
 
@@ -382,57 +398,65 @@ input:nth-child(13) {
   width: 102px;
   color: #f06c64;
   background-color: #f0d8d9;
-  font-weight:bold;
+  font-weight: bold;
   text-indent: 0;
   cursor: pointer;
 }
 
 #message-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000b;
+}
+
+#message-block div.canvas {
   position: absolute;
-  top: 3000px;
-  left: 33%;
-  width: 620px;
-  height: 300px;
-  border: 3px solid #000000;
-  background-color: #f0d8d9;
-  border-radius: 10px;
+  top: calc(50vh - 250px);
+  left: calc(50vw - 380px);
+  width: 740px;
+  height: 500px;
+  border: 5px solid #f06c64;
+  border-radius: 20px;
+  background-color: #d4d6c0;
 }
 
-#message-block > p {
-  color: #f06c60;
+#message-block div.canvas > p {
+  font-size: 30px;
+  color: #cf5c56;
   text-align: center;
-  font-family: Lato-Bold;
-  
-}
-
-#message-block.hidden {
-  display: none;
 }
 
 #message {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 500px;
-  height: 180px;
+  margin: 20px;
+  height: 300px;
+  font: 25px bold;
   color: #000000;
   overflow: auto;
   font-family: Lato-Light;
 }
 
 #close-button {
-  position: absolute;
-  top: 85%;
-  left: 42%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
   width: 100px;
-  height: 30px;
-  color: #000000;
-  background-color: #c6b8b9;
+  height: 40px;
+  font-size: 15px;
+  color: #cf5c56;
+  background-color: #c9cbb7;
   font-weight: bold;
   text-indent: 0;
-  border: 0;
+  border: 3px solid #cf5c56;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#message-block.hidden {
+  display: none;
 }
 
 *::placeholder {

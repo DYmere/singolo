@@ -5,13 +5,21 @@ const close_button = document.getElementById("close-button");
 const gallery = document.querySelector(".gallery");
 const ibutton_ver = document.getElementById("ibutton-ver");
 const ibutton_hor = document.getElementById("ibutton-hor");
+const next = document.getElementById("arrow-next");
+const prev = document.getElementById("arrow-prev");
+const block = document.querySelectorAll(".block");
+var block_arr = [];
+
+block.forEach(element => block_arr.push(element));
 
 // header
 
+/*
 menu.addEventListener("click", (event) => {
   menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
   event.target.classList.add("active");
 });
+*/
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset < 545) {
@@ -38,9 +46,25 @@ window.addEventListener("scroll", () => {
 
 // slider: slide switch
 
+next.addEventListener("click", () => { 
+  block_arr[2].style.position = "relative";
+  block_arr[2].style.left = "-2040px";
+  block_arr.forEach(element => {
+    element.style.display = "grid";
+    element.style.transform = "translateX(1020px)";
+  });
+});
+
+prev.addEventListener("click", () => {
+  block_arr.forEach(element => {
+    element.style.display = "grid";
+    element.style.transform = "translateX(-1020px)";
+  });
+});
+
 // slider: phone screens activation
 
-ibutton_ver.addEventListener("click", (event) => {
+ibutton_ver.addEventListener("click", () => {
   let iphone = document.querySelector(".iphone-vertical img");
   if (iphone.getAttribute("src") == "assets/images/iphone-vertical.png") {
     iphone.setAttribute("src", "assets/images/black-screen-vertical.png");
@@ -50,7 +74,7 @@ ibutton_ver.addEventListener("click", (event) => {
   };
 });
 
-ibutton_hor.addEventListener("click", (event) => {
+ibutton_hor.addEventListener("click", () => {
   let iphone = document.querySelector(".iphone-horizontal img");
   if (iphone.getAttribute("src") == "assets/images/iphone-horizontal.png") {
     iphone.setAttribute("src", "assets/images/black-screen-horizontal.png");
