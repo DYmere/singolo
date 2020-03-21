@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 
 // slider: slide switch
 
-// slider: activating phone screens
+// slider: phone screens activation
 
 ibutton_ver.addEventListener("click", (event) => {
   let iphone = document.querySelector(".iphone-vertical img");
@@ -96,13 +96,13 @@ button.addEventListener("click", (event) => {
   let input_email = document.getElementById("input-email");
   if (input_name.validity.valid && input_email.validity.valid) {
     if (input_subject) {
-      document.getElementById("subject").innerText = "Subject: "+input_subject;
+      document.getElementById("subject").innerText = "Subject: " + input_subject;
     }
     else {
       document.getElementById("subject").innerText = "without subject";
     };
     if (input_description) {
-      document.getElementById("description").innerText = "Description: "+input_description;
+      document.getElementById("description").innerText = "Description: " + input_description;
     }
     else {
       document.getElementById("description").innerText = "without description";

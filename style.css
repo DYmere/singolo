@@ -394,13 +394,15 @@ input:nth-child(13) {
   width: 620px;
   height: 300px;
   border: 3px solid #000000;
-  background-color: #f06c64;
+  background-color: #f0d8d9;
   border-radius: 10px;
 }
 
 #message-block > p {
-  color: #000000;
+  color: #f06c60;
   text-align: center;
+  font-family: Lato-Bold;
+  
 }
 
 #message-block.hidden {
@@ -413,8 +415,9 @@ input:nth-child(13) {
   left: 10%;
   width: 500px;
   height: 180px;
-  color: #ffffff;
+  color: #000000;
   overflow: auto;
+  font-family: Lato-Light;
 }
 
 #close-button {
@@ -423,8 +426,8 @@ input:nth-child(13) {
   left: 42%;
   width: 100px;
   height: 30px;
-  color: #f06c64;
-  background-color: #f0d8d9;
+  color: #000000;
+  background-color: #c6b8b9;
   font-weight: bold;
   text-indent: 0;
   border: 0;
