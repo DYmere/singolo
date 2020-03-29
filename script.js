@@ -1,68 +1,147 @@
-const menu = document.querySelector("header ul");
+const general_menu = document.querySelector("header ul");
+const dropdown_menu = document.getElementById("menu-block");
 const portfolio_menu = document.querySelector(".portfolio nav");
 const button = document.getElementById("submit");
 const close_button = document.getElementById("close-button");
 const gallery = document.querySelector(".gallery");
-const ibutton_ver = document.getElementById("ibutton-ver");
-const ibutton_hor = document.getElementById("ibutton-hor");
 const next = document.getElementById("arrow-next");
 const prev = document.getElementById("arrow-prev");
 const block = document.querySelectorAll(".block");
-var block_arr = [];
+const burger_menu_hor = document.getElementById("burger-menu-hor");
+const burger_menu_ver = document.getElementById("burger-menu-ver");
+const ibutton_ver = document.getElementById("ibutton-ver");
+const ibutton_hor = document.getElementById("ibutton-hor");
 
-block.forEach(element => block_arr.push(element));
+document.querySelectorAll(".block-1").forEach(element => {
+  element.style.right="0";
+});
+
+document.querySelectorAll(".block-2").forEach(element => {
+  element.style.right="0";
+});
 
 // header
 
-/*
-menu.addEventListener("click", (event) => {
-  menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-  event.target.classList.add("active");
+burger_menu_hor.addEventListener("click", (event) => {
+  dropdown_menu.classList.remove("hidden-menu");
 });
-*/
+
+burger_menu_ver.addEventListener("click", (event) => {
+  dropdown_menu.classList.add("hidden-menu"); 
+});
 
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset < 545) {
-    menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-    menu.querySelector("li:nth-child(1) a").classList.add("active");
+  //scroll: width = 1020px
+  if (window.pageYOffset < 545 && document.body.clientWidth == 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(1) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 545 && window.pageYOffset < 1050) {
-    menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-    menu.querySelector("li:nth-child(2) a").classList.add("active");
+  else if (window.pageYOffset >= 545 && window.pageYOffset < 1050 && document.body.clientWidth == 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(2) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 1050 && window.pageYOffset < 1920) {
-    menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-    menu.querySelector("li:nth-child(3) a").classList.add("active");
+  else if (window.pageYOffset >= 1050 && window.pageYOffset < 1920&& document.body.clientWidth == 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(3) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 1920 && window.pageYOffset < 2450) {
-    menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-    menu.querySelector("li:nth-child(4) a").classList.add("active");
+  else if (window.pageYOffset >= 1920 && window.pageYOffset < 2450 && document.body.clientWidth == 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(4) a").classList.add("active");
   }
-  else if (window.pageYOffset >= 2450) {
-    menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
-    menu.querySelector("li:nth-child(5) a").classList.add("active");
+  else if (window.pageYOffset >= 2450 && document.body.clientWidth == 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(5) a").classList.add("active");
+  }
+  // scroll: 768px <= width < 1020px
+  else if (window.pageYOffset < 400 && document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(1) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 400 && window.pageYOffset < 1050 && document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(2) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 1050 && window.pageYOffset < 1920 && document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(3) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 1920 && window.pageYOffset < 2450 && document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(4) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 2450 && document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    general_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    general_menu.querySelector("li:nth-child(5) a").classList.add("active");
+  }
+  // scroll: 375px <= width < 768px
+  else if (window.pageYOffset < 221 && document.body.clientWidth < 768) {
+    dropdown_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    dropdown_menu.querySelector("li:nth-child(1) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 221 && window.pageYOffset < 1050 && document.body.clientWidth < 768) {
+    dropdown_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    dropdown_menu.querySelector("li:nth-child(2) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 1050 && window.pageYOffset < 1920 && document.body.clientWidth < 768) {
+    dropdown_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    dropdown_menu.querySelector("li:nth-child(3) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 1920 && window.pageYOffset < 3400 && document.body.clientWidth < 768) {
+    dropdown_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    dropdown_menu.querySelector("li:nth-child(4) a").classList.add("active");
+  }
+  else if (window.pageYOffset >= 3400 && document.body.clientWidth < 768) {
+    dropdown_menu.querySelectorAll("a").forEach(element => element.classList.remove("active"));
+    dropdown_menu.querySelector("li:nth-child(5) a").classList.add("active");
   };
 });
 
 // slider: slide switch
 
-next.addEventListener("click", () => { 
-  block_arr[2].style.position = "relative";
-  block_arr[2].style.left = "-2040px";
-  block_arr.forEach(element => {
-    element.style.display = "grid";
+/*
+next.addEventListener("click", () => {
+  let block_1 = document.querySelectorAll(".block-1");
+  let block_2 = document.querySelectorAll(".block-2");
+  block_1.forEach(element => {
     element.style.transform = "translateX(1020px)";
+  });
+
+  block_2.forEach(element => {
+      element.style.right = "-2040px";
+      element.style.transform = "translateX(1020px)";
   });
 });
 
 prev.addEventListener("click", () => {
-  block_arr.forEach(element => {
-    element.style.display = "grid";
+  let block_1 = document.querySelectorAll(".block-1");
+  let block_2 = document.querySelectorAll(".block-2");
+  block_1.forEach(element => {
+    element.style.transform = "translateX(-1020px)";
+  });
+  block_2.forEach(element => {
     element.style.transform = "translateX(-1020px)";
   });
 });
+*/
 
 // slider: phone screens activation
+
+window.addEventListener("resize", () => {
+  let iphone_ver = document.getElementById("ibutton-ver").querySelector("area");
+  let iphone_hor = document.getElementById("ibutton-hor").querySelector("area");
+  if (document.body.clientWidth == 1020) {
+    iphone_ver.setAttribute("coords", "107, 429, 21");
+    iphone_hor.setAttribute("coords", "29, 107, 21");
+  }
+  else if (document.body.clientWidth > 767 && document.body.clientWidth < 1020) {
+    iphone_ver.setAttribute("coords", "82, 323, 15");
+    iphone_hor.setAttribute("coords", "23, 81, 15");
+  }
+  else if (document.body.clientWidth < 768) {
+    iphone_ver.setAttribute("coords", "39, 155, 8");
+    iphone_hor.setAttribute("coords", "11, 40, 8");
+  }
+});
 
 ibutton_ver.addEventListener("click", () => {
   let iphone = document.querySelector(".iphone-vertical img");
